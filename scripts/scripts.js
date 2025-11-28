@@ -28,7 +28,7 @@ let duration = parseInt(document.getElementById("duration-text").innerHTML, 10);
 
 // INSERT YOUR CODE HERE
 
-const recalculate = () => {
+function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
 
     let modelName = document.getElementById("model-text").innerHTML.replace("Model ", "");
@@ -41,7 +41,7 @@ const recalculate = () => {
         totalCost = duration * 213;
     }
     costLabel.innerHTML = totalCost;
-}
+};
 
 
 
@@ -62,7 +62,7 @@ const recalculate = () => {
 
 let modelButton = document.getElementById("model-button");
 
-const changeModel = () => {
+function changeModel() {
     let modelLabel = document.getElementById("model-text");
     let currentModel = modelLabel.innerHTML.replace("Model ", "");
 
@@ -74,7 +74,7 @@ const changeModel = () => {
         modelLabel.innerHTML = "Model XYZ";
     }
     recalculate();
-}
+};
 
 modelButton.addEventListener("click", changeModel);
 
@@ -96,12 +96,12 @@ modelButton.addEventListener("click", changeModel);
 
 let durationButton = document.getElementById("duration-button");
 
-const changeDuration = () => {
+function changeDuration() {
     let durationLabel = document.getElementById("duration-text");
     let newDuration = prompt("Enter new duration in days:");
     duration = parseInt(newDuration, 10);
     durationLabel.innerHTML = newDuration;
     recalculate();
-}
+};
 
 durationButton.addEventListener("click", changeDuration);
